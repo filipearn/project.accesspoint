@@ -30,8 +30,8 @@ public class JornadaService {
         return jornadaRepository.findById(jornadaId);
     }
 
-    public void delete(JornadaTrabalho jornadaTrabalho){
-        jornadaRepository.delete(jornadaTrabalho);
+    public void delete(Long jornadaId){
+        jornadaRepository.deleteById(jornadaId);
     }
 
 }
