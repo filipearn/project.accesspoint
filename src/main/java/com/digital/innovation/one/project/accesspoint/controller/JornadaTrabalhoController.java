@@ -16,11 +16,13 @@ public class JornadaTrabalhoController {
     @Autowired
     JornadaService jornadaService;
 
-    public JornadaTrabalho create(@RequestBody JornadaTrabalho jornadaTrabalho){
+    @PostMapping
+    public JornadaTrabalho create(@RequestBody JornadaTrabalho jornadaTrabalho) {
         return jornadaService.save(jornadaTrabalho);
     }
 
-    public JornadaTrabalho update(@RequestBody JornadaTrabalho jornadaTrabalho){
+    @PutMapping
+    public JornadaTrabalho update(@RequestBody JornadaTrabalho jornadaTrabalho) {
         return jornadaService.save(jornadaTrabalho);
     }
 
@@ -30,11 +32,19 @@ public class JornadaTrabalhoController {
     }
 
     @GetMapping
-    public List<JornadaTrabalho> findAll(){
+    public List<JornadaTrabalho> findAll() {
         return jornadaService.findAll();
     }
 
-    public void deleteById(@RequestBody Long jornadaId){
-        jornadaService.delete(jornadaId);
+    @DeleteMapping("/{idJornada}")
+    public ResponseEntity<Void> deleteById(@PathVariable("idJornada") Long idJornada) throws Exception {
+        try {
+            jornadaService.deleteById(idJornada);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return ResponseEntity.noContent().build();
+
     }
+
 }

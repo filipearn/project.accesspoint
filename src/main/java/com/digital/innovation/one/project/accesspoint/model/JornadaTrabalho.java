@@ -2,8 +2,7 @@ package com.digital.innovation.one.project.accesspoint.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -15,6 +14,7 @@ import javax.persistence.Id;
 public class JornadaTrabalho {
 
     @Id
+    @GeneratedValue
     private Long id;
     private String descricao;
 }

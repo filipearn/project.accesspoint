@@ -30,7 +30,7 @@ public class JornadaService {
         return jornadaRepository.findById(jornadaId);
     }
 
-    public void delete(Long jornadaId){
+    public void deleteById(Long jornadaId){
         jornadaRepository.deleteById(jornadaId);
     }
 
