@@ -11,21 +11,6 @@ public class ModelMapperConfig {
     public ModelMapper modelMapper(){
         var modelMapper = new ModelMapper();
 
-//        modelMapper.createTypeMap(CityInputV2.class, City.class)
-//                        .addMappings(mapper -> mapper.skip(City::setId));
-//
-//        modelMapper.createTypeMap(ItemOrderInput.class, ItemOrder.class)
-//                .addMappings(mapper -> mapper.skip(ItemOrder::setId));
-//
-//
-//
-//        var addressToAddressModelTypeMap = modelMapper.createTypeMap(
-//                Address.class, AddressModel.class);
-//
-//        addressToAddressModelTypeMap.<String>addMapping(
-//                addressSrc -> addressSrc.getCity().getState().getName(),
-//                (addressModelDest, value) -> addressModelDest.getCity().setState(value));
-
         return modelMapper;
     }
 }
